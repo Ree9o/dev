@@ -25,3 +25,6 @@
 - レスポンシブ
 
   ブレークポイントは600pxです。
+
+
+  https://xd.adobe.com/view/38e13d52-6192-4ea0-b02c-19125f8a7c4d-6db2/specs/?hints=off
