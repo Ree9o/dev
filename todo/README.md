@@ -2,7 +2,13 @@
   - my_todo/ # client
   - server/
 
-todo/ で`docker-compose up --build`してください。
+# 手順
+
+1. `cd dev/todo`
+2. `cd server` and `npm i`,`cd ..`
+3. `cd my_todo` and `rm -rf package-lock.json node_module`,`cd ..`
+4. `docker-compose run my_todo bash` and `npm i`,`exit` #rollupのバグでコンテナに入って npm i しないといけない
+5. `docker-compose up --build`
 
 # React + TypeScript + Vite
 
