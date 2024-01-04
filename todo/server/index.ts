@@ -41,6 +41,7 @@ app.post("/add", (req: Request, res: Response) => {
   const sql = `INSERT INTO todo VALUES("${id}","${todo}")`;
   connection.query(sql, (err: Error, result: TodoResult) => {
     if (err) {
+      console.log(err)
       return res.status(500).json({ message: err.message });
     }
     return res.status(200).json({ id: id, todo });

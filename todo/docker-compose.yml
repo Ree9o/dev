@@ -1,10 +1,9 @@
-version: '3.8'
+version: "3.8"
 services:
   my_todo:
     build: ./my_todo
     volumes:
       - ./my_todo:/app
-      - /app/node_modules
     ports:
       - "5173:5173"
     environment:
@@ -14,14 +13,13 @@ services:
     build: ./server
     volumes:
       - ./server:/app
-      - /app/node_modules
     ports:
       - "3000:3000"
     environment:
       - MYSQL_HOST=mysql
       - MYSQL_USER=root
       - MYSQL_PASSWORD=password
-      - MYSQL_DB=todolist
+      - MYSQL_DB=todos
     depends_on:
       - mysql
 
@@ -32,9 +30,10 @@ services:
       - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: todolist
+      MYSQL_DATABASE: todos
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
 
 volumes:
   mysql-data:
