@@ -31,7 +31,7 @@ const todos: TodoItemType[] = [
   },
   {
     id: "3",
-    title: "Task 3",
+    title: "Editing now",
     isChecked: false,
     isEditing: true,
   },
