@@ -1,7 +1,7 @@
 // Checkbox.stories.tsx
 import React from "react";
 import { Story, Meta } from "@storybook/react";
-import Checkbox, { CheckboxType } from "./Checkbox"; // コンポーネントのパスを適宜調整してください
+import Checkbox, { CheckboxType } from "./Checkbox"; 
 
 export default {
   title: "Components/Checkbox",

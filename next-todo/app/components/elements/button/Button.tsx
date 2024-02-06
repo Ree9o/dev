@@ -3,17 +3,18 @@ import React, { ReactNode, MouseEventHandler } from "react";
 
 export type ButtonType = {
   children: ReactNode;
-  onClick: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   className?: string;
+  type?: "submit" | "button";
 };
 
-function Button({ children, onClick, className }: ButtonType): JSX.Element {
-  const defaultClass =
+function Button({ children, onClick, className, type }: ButtonType): JSX.Element {
+  const defaultStyles =
     "w-20 h-10 border border-white text-white rounded-md bg-cyan-500 shadow hover:cursor-pointer hover:opacity-80 hover:translate-y-px";
-  const combinedClasses = `${defaultClass} ${className}`;
+  const combinedStyles = `${defaultStyles} ${className}`;
 
   return (
-    <button onClick={onClick} className={combinedClasses}>
+    <button type={type} onClick={onClick} className={combinedStyles}>
       {children}
     </button>
   );
