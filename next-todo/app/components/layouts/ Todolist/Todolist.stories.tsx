@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Story, Meta } from "@storybook/react";
 
 import Todolist from "./Todolist";
@@ -26,4 +27,4 @@ Default.args = {
   ],
   onEdit: (id: number, title: string) => console.log(`Editing ${id}: ${title}`),
   onRemove: (id: number) => console.log(`Removing ${id}`),
-};
+}

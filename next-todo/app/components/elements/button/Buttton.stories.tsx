@@ -21,7 +21,6 @@ Primary.args = {
   children: "Click me",
 };
 
-// 他のバリエーションを追加する場合は、以下のように新しいストーリーを定義します
 export const Secondary = Template.bind({});
 Secondary.args = {
   ...Primary.args,
@@ -29,4 +28,3 @@ Secondary.args = {
   children: "Secondary Button",
 };
 
-// 他のバリエーションを追加したい場合は、同様にテンプレートを利用して定義できます
