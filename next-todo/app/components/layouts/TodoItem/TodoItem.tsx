@@ -15,8 +15,8 @@ export type TodoItemProps = {
 export default function TodoItem({
   id,
   title,
-  isChecked,
-  isEditing,
+  isChecked = false,
+  isEditing = false,
   onCheck,
   onEdit,
   onConfirmEdit,
