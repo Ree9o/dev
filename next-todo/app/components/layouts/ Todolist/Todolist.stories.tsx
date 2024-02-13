@@ -1,48 +1,29 @@
 import React from "react";
-import { Meta, Story } from "@storybook/react";
-import { action } from "@storybook/addon-actions";
-import Todolist, { TodolistProps, TodoItemType } from "./Todolist";
+import { Story, Meta } from "@storybook/react";
 
+import Todolist from "./Todolist";
+type TodolistStory = {
+  todos: {
+    id: number;
+    title: string;
+  }[];
+  onEdit: (id: number, title: string) => void;
+  onRemove: (id: number) => void;
+};
 export default {
+  title: "Example/Todolist",
   component: Todolist,
-  title: "Layouts/Todolist",
-  parameters: {
-    docs: {
-      description: {
-        component: "A component for rendering a list of TODO items.",
-      },
-    },
-  },
 } as Meta;
 
-// TODOアイテムのダミーデータ
-const todos: TodoItemType[] = [
-  {
-    id: "1",
-    title: "Task 1",
-    isChecked: false,
-    isEditing: false,
-  },
-  {
-    id: "2",
-    title: "Task 2",
-    isChecked: true,
-    isEditing: false,
-  },
-  {
-    id: "3",
-    title: "Editing now",
-    isChecked: false,
-    isEditing: true,
-  },
-];
+const Template: Story<TodolistStory> = (args: any) => <Todolist {...args} />;
 
-const Template: Story<TodolistProps> = (args) => <Todolist {...args} />;
-
-export const DefaultTodolist = Template.bind({});
-DefaultTodolist.args = {
-  todos: todos,
-  onCheck: action("onCheck"),
-  onEdit: action("onEdit"),
-  onConfirmEdit: action("onConfirmEdit"),
+export const Default = Template.bind({});
+Default.args = {
+  todos: [
+    { id: 1, title: "Todo 1" },
+    { id: 2, title: "Todo 2" },
+    { id: 3, title: "Todo 3" },
+  ],
+  onEdit: (id: number, title: string) => console.log(`Editing ${id}: ${title}`),
+  onRemove: (id: number) => console.log(`Removing ${id}`),
 };
