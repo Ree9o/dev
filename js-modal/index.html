@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="margin: 0; padding: 0">
+    <main style="position: relative">
+      <div
+        id="Modal-1"
+        style="margin: 0 auto; border: 1px solid #333333; display: block; position: absolute"
+      >
+        <button
+          type="button"
+          onclick="handleClick()"
+          style="width: 100%; height: 100%; text-align: center"
+        >
+          モーダルを開く
+        </button>
+      </div>
+      <button
+        type="button"
+        id="Modal-2"
+        style="
+          width: 100vw;
+          height: 100vh;
+          appearance: none;
+          background-color: gray;
+          border: none;
+          display: none;
+          position: absolute;
+        "
+        onclick="handleClick()"
+      >
+        <div
+          style="
+            margin: 0 auto;
+            width: 50%;
+            height: 10rem;
+            display: block;
+            border: 1px solid #333333;
+            z-index: 10;
+            background-color: white;
+            text-align: center;
+          "
+        >
+          モーダル2
+        </div>
+      </button>
+    </main>
+  </body>
+  <script>
+    const prevModal = document.querySelector("#Modal-1");
+    const nextModal = document.querySelector("#Modal-2");
+    const handleClick = () => {
+      if (prevModal.style.display !== "none") {
+        prevModal.style.display = "none";
+        nextModal.style.display = "block";
+      } else {
+        prevModal.style.display = "block";
+        nextModal.style.display = "none";
+      }
+    };
+  </script>
+</html>
