@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div id="hamburger" class="hamburger">
+        <span class="line line-top"> </span>
+        <span class="line line-mid"> </span>
+        <span class="line line-bottom"> </span>
+      </div>
+      <nav id="navigation" class="nav">
+        <ul class="nav-list">
+          <li><a href="">home</a></li>
+          <li><a href="">about</a></li>
+          <li><a href="">hoge</a></li>
+          <li><a href="">huga</a></li>
+        </ul>
+      </nav>
+    </main>
+  </body>
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("navigation");
+    const lineTop = hamburger.children.item(0);
+    const lineMid = hamburger.children.item(1);
+    const lineBottom = hamburger.children.item(2);
+    const borders = [lineTop, lineMid, lineBottom];
+
+    hamburger.addEventListener("click", toggleHamburger);
+
+    function toggleHamburger() {
+      borders.map((border) => {
+        console.log(border);
+        border.classList.toggle("opened");
+      });
+      nav.classList.toggle("opened");
+    }
+  </script>
+</html>
